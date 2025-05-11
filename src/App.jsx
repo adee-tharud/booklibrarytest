@@ -1,8 +1,9 @@
+import "./App.css"
+import LayoutWrapper from "./layout/Index";
+
 function App() {
   return (
-    <>
-      <p>hello world</p>
-    </>
+    <LayoutWrapper/>
   );
 }
 
