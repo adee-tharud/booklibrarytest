@@ -1,11 +1,20 @@
 {
-    "books":
-    [{
-        "id": "8674",
-        "title": "TEst one boook",
-        "author": "asdasddasdasd",
-        "rating": 2.5,
-        "category": "Algorithms",
-        "cover": "https://m.media-amazon.com/images/I/61ZKNw0xixL._AC_UF1000,1000_QL80_.jpg"
-    }]
+  "books": [
+    {
+      "id": "8674",
+      "title": "TEst one boook",
+      "author": "asdasddasdasd",
+      "rating": 2.5,
+      "category": "Algorithms",
+      "cover": "https://m.media-amazon.com/images/I/61ZKNw0xixL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": "e728",
+      "title": "The Pragmatic Programmer",
+      "author": "Andrew Hunt",
+      "rating": 3.3,
+      "category": "Programming",
+      "cover": "https://images-na.ssl-images-amazon.com/images/I/518FqJvR9aL._SX377_BO1,204,203,200_.jpg"
+    }
+  ]
 }
