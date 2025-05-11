@@ -1,0 +1,11 @@
+{
+    "books":
+    [{
+        "id": "8674",
+        "title": "TEst one boook",
+        "author": "asdasddasdasd",
+        "rating": 2.5,
+        "category": "Algorithms",
+        "cover": "https://m.media-amazon.com/images/I/61ZKNw0xixL._AC_UF1000,1000_QL80_.jpg"
+    }]
+}
