@@ -52,6 +52,16 @@ npm run dev
 
 This will start the app at [http://localhost:5173](http://localhost:5173) (or similar port shown in terminal).
 
+# 3. Environment Variables
+
+This app supports environment variables using a .env file.
+
+Create a .env file in the root directory:
+
+```bash
+VITE_API_BASE_URL= mock-api-url 
+```
+
 ### Start backend (JSON Server)
 
 ```bash
