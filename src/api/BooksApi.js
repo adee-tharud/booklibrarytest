@@ -3,28 +3,28 @@ import { notification } from "antd";
 import { bookLibSlice } from "../store/bookLibStore";
 import { store } from "../store/Store";
 
-const API_URL = "http://localhost:3001/books";
+const API_URL = import.meta.env.VITE_API_URL;
 
-// error notification
+//error notification
 export const errorNotification = () => {
   notification.error({
-    message: "Something went wrong",
+    message: "Something went wrong!",
     description: "Please check your internet connection or try again later.",
   });
 };
 
-// success notification
-const succesNotification = () => {
-  return notification.success({
-    message: "Success",
+//success notification
+const successNotification = () => {
+  return notification.open({
+    message: "Success!",
     description: "Your request was successful.",
     onClick: () => {
-      console.log("Notification Clicked");
+      console.log("Notification Clicked!");
     },
   });
 };
 
-// API call with axios
+// API calls with axios
 const fetchBooks = () => axios.get(API_URL);
 const createBook = (book) => axios.post(API_URL, book);
 const updateBook = (id, data) => axios.put(`${API_URL}/${id}`, data);
@@ -37,7 +37,7 @@ export const handleFetchBooks = async () => {
 
     if (response.status === 200) {
       store.dispatch(bookLibSlice.actions.setBooks(response.data));
-      succesNotification();
+      successNotification();
     } else {
       store.dispatch(bookLibSlice.actions.setBooks([]));
       errorNotification();
@@ -57,7 +57,7 @@ export const handleDeleteBook = async (id) => {
     const response = await deleteBook(id);
 
     if (response.status === 200 || response.status === 204) {
-      succesNotification();
+      successNotification();
       handleFetchBooks();
     } else {
       errorNotification();
@@ -76,7 +76,7 @@ export const handleCreateBook = async (book) => {
     const response = await createBook(book);
 
     if (response.status === 201) {
-      succesNotification();
+      successNotification();
       handleFetchBooks();
     } else {
       errorNotification();
@@ -97,7 +97,7 @@ export const handleUpdateBook = async (id, data) => {
     const response = await updateBook(id, data);
 
     if (response.status === 200) {
-      succesNotification();
+      successNotification();
       handleFetchBooks();
     } else {
       errorNotification();

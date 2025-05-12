@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "antd";
-import HeaderContent from "../header/Index";
-import Books from "../books/Index";
+import HeaderContent from "../components/header/Index";
+import Books from "../components/books/Index";
 
 const {Header, Content} = Layout;
 
