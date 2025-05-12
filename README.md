@@ -1,12 +1,110 @@
-# React + Vite
+# 📚 Book Wise
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive book library app built with **React**, **Redux Toolkit**, **Ant Design**, and **JSON Server**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- Browse, add, edit, delete books
+- Search by title or author with debounce
+- Toggle grid/list views
+- Responsive layout (mobile to desktop)
+- Mock API with JSON Server
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- React 19
+- Redux Toolkit
+- Ant Design 5
+- Axios
+- JSON Server (mock backend)
+- Vite (build tool)
+
+---
+
+## 📦 Setup Instructions
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/your-username/book_wise.git
+cd book_wise
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+---
+
+## 🖥️ Running the App
+
+### Start frontend (Vite)
+
+```bash
+npm run dev
+```
+
+This will start the app at [http://localhost:5173](http://localhost:5173) (or similar port shown in terminal).
+
+### Start backend (JSON Server)
+
+```bash
+npm run server
+```
+
+This starts the mock API at [http://localhost:3001/books](http://localhost:3001/books)
+
+> ℹ️ The `db.json` file contains mock book data and serves as your backend.
+
+```bash
+json-server --watch db.json --port 3001
+```
+
+---
+
+## 📁 Project Structure
+
+```
+book_wise/
+├── public/
+├── src/
+│   ├── api/
+│   ├── components/
+│   ├── pages/
+│   ├── store/
+│   └── App.jsx
+├── db.json
+├── package.json
+└── README.md
+```
+
+---
+
+## ✅ Available Scripts
+
+| Script       | Command           | Description                      |
+| ------------ | ----------------- | -------------------------------- |
+| Start App    | `npm run dev`     | Start React app with Vite        |
+| Start Server | `npm run server`  | Start JSON server at port 3001   |
+| Lint         | `npm run lint`    | Run ESLint                       |
+| Build        | `npm run build`   | Build for production             |
+| Preview      | `npm run preview` | Preview production build locally |
+
+---
+
+## 📮 API Endpoints
+
+All endpoints use: `http://localhost:3001/books`
+
+- `GET /books` — Get all books
+- `POST /books` — Add a new book
+- `PUT /books/:id` — Update a book
+- `DELETE /books/:id` — Delete a book
+
+---

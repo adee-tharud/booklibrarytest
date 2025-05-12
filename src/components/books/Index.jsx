@@ -5,11 +5,11 @@ import {
   setIsAddEditModalOpen,
   setIsEdit,
   setSelectedBook,
-} from "../store/bookLibStore";
-import UseResponsive from "../hooks/UseResponsive";
+} from "../../store/bookLibStore";
+import UseResponsive from "../../hooks/UseResponsive";
 import { MdAddBox } from "react-icons/md";
 import ItemCard from "./ItemCard";
-import { handleFetchBooks } from "../api/BooksApi";
+import { handleFetchBooks } from "../../api/BooksApi";
 import AddEditForm from "../form/Index";
 
 const Books = () => {
@@ -24,7 +24,6 @@ const Books = () => {
     handleFetchBooks();
   }, []);
 
-  console.log("resScreen", isAddEditModalOpen);
 
   const getGridCount = () => {
     if (isGridView) {

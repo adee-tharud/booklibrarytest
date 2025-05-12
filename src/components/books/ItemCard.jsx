@@ -5,10 +5,10 @@ import {
   setIsAddEditModalOpen,
   setIsEdit,
   setSelectedBook,
-} from "../store/bookLibStore";
+} from "../../store/bookLibStore";
 
 import { MdDelete, MdEdit } from "react-icons/md";
-import { handleDeleteBook } from "../api/BooksApi";
+import { handleDeleteBook } from "../../api/BooksApi";
 
 const { Meta } = Card;
 
@@ -28,6 +28,49 @@ const ItemCard = ({ item }) => {
     }
   };
 
+  if (!isGridView) {
+    return (
+      <>
+        <List.Item.Meta
+          avatar={
+            <img
+              alt="cover"
+              src={item.cover}
+              style={{
+                height: "8rem",
+                aspectRatio: "9/16",
+              }}
+            />
+          }
+          title={item.title}
+          description={
+            <div>
+              <Rate disabled allowHalf defaultValue={item.rating} />
+              <p>{item.author}</p>
+              <p>{item.description}</p>
+              <MdEdit
+                className="card-action-btn edit-icon"
+                key="edit"
+                onClick={() => handleActionClick("edit")}
+              />
+              <Popconfirm
+                title="Delete the book"
+                description="Are you sure to delete this book?"
+                okText="Yes"
+                cancelText="No"
+                onConfirm={() => handleActionClick("delete")}
+              >
+                <MdDelete
+                  className="card-action-btn delete-icon"
+                  key="delete"
+                />
+              </Popconfirm>
+            </div>
+          }
+        />
+      </>
+    );
+  }
   return (
     <Card
       hoverable
@@ -46,14 +89,14 @@ const ItemCard = ({ item }) => {
         <MdEdit
           className="card-action-btn edit-icon"
           key="edit"
-          onClick={() => handleActionClick("edit", item?.id)}
+          onClick={() => handleActionClick("edit")}
         />,
         <Popconfirm
           title="Delete the book"
           description="Are you sure to delete this book?"
           okText="Yes"
           cancelText="No"
-          onConfirm={() => handleActionClick("delete", item?.id)}
+          onConfirm={() => handleActionClick("delete")}
         >
           <MdDelete className="card-action-btn delete-icon" key="delete" />
         </Popconfirm>,

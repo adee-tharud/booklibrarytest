@@ -15,6 +15,22 @@
       "rating": 3.3,
       "category": "Programming",
       "cover": "https://images-na.ssl-images-amazon.com/images/I/518FqJvR9aL._SX377_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": "faf8",
+      "title": "You Don't Know JS Yet",
+      "author": "Kyle Simpson 2",
+      "rating": 4.9,
+      "category": "JavaScript",
+      "cover": "https://github.com/getify/You-Dont-Know-JS/raw/2nd-ed/get-started/images/cover.png"
+    },
+    {
+      "title": "Design Patterns Book",
+      "author": "Erich gamma",
+      "rating": 4.5,
+      "category": "Design Patterns",
+      "cover": "https://images-na.ssl-images-amazon.com/images/I/81gtKoapHFL.jpg",
+      "id": "90db"
     }
   ]
 }

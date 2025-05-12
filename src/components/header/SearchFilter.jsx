@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Select, Space, Input } from "antd";
-import { setBooks } from "../store/bookLibStore";
+import { setBooks } from "../../store/bookLibStore";
 
 const { Search } = Input;
 
@@ -51,11 +51,12 @@ const SearchFilter = () => {
         onChange={setSearchKey}
         style={{ minWidth: 120 }}
       />
-      <Search placeholder="Search (min 3 characters)"
-      value={query}
-      onChange={(e)=> setQuery(e.target.value)}
-      allowClear
-      loading={loading}
+      <Search
+        placeholder="Search (min 3 characters)..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        allowClear
+        loading={loading}
       />
     </Space.Compact>
   );
